@@ -29,8 +29,19 @@ doc을 정의 하고(dxf버전 정의) 난 다음 modelspace를 정의한 후 ad
 선은 시작점과 끝점을, 텍스트는 insert point와 높이, 색, 회전을 지정했다.  
 doc을 saveas 메소드로 저장하면 파일로 생성된다.
 
-|     doc \= ezdxf.new('R2010')    msp \= doc.modelspace()    msp.add\_circle((0, 0), 5, dxfattribs={'color': 1})  \# 빨간색으로 설정    msp.add\_line((0, 0), (50,50), dxfattribs={'color': 1})    msp.add\_text("Sample Text", dxfattribs={        'insert': (0, 5),        'height': 0.5,        'color': 2,  \# 노란색        'rotation': 30  \# 30도 회전    })   doc.saveas(filename) |
-| :---- |
+```python
+    doc \= ezdxf.new('R2010')
+    msp \= doc.modelspace()
+    msp.add\_circle((0, 0), 5, dxfattribs={'color': 1})  \# 빨간색으로 설정
+    msp.add\_line((0, 0), (50,50), dxfattribs={'color': 1})
+    msp.add\_text("Sample Text", dxfattribs={
+        'insert': (0, 5),
+        'height': 0.5,
+        'color': 2,  \# 노란색
+        'rotation': 30  \# 30도 회전
+    })
+    doc.saveas(filename)
+```
 
 필자는 claude 3.5 sonnet을 이용해서 몇가지 기능을 넣어봤다.  
 필자가 필요한 기능은 GUI에서 dxf파일을 보여주는 기능인데, dxf파일을 GUI에서 직접 보여주는 모듈을 못찾았다.
@@ -56,7 +67,7 @@ svg형식은 text형식(XML)으로 되어있다. 그래서 dxf요소별로 해�
 | :---- |
 
 sample.dxf는 아래와 같이 원,선,텍스트 3개 요소로 이루어진 dxf파일이다.  
-![][image1]
+![image001](https://github.com/user-attachments/assets/a0f3bea8-3512-4934-b699-a024ae6f12af)
 
 sample.svg파일은 아래와 같이 xml형식의 text파일이다.
 
